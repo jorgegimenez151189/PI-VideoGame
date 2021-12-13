@@ -176,12 +176,16 @@ const getVideoGameDetalleId = async (req, res) => {
 
 const createVideoGame = async (req, res) => {
     try {
-        const {nombre, descripcion, fecha_lanzamieto, rating, plataforma} = req.body;
+        const {nombre, descripcion, fecha_lanzamieto, rating, plataforma, id_genero} = req.body;
         const result = await repositoryVideosGames.save({nombre, descripcion, fecha_lanzamieto, rating, plataforma});
+        await result.setGeneros(id_genero);
+
+        console.log("Rsultado:", result);
+
         res.status(201).json({message: 'Video Game creado exitosamente'})
     } catch (error) {
         console.error(error.message);
-        res.status(500).json({message: 'Internal server error'});
+        res.status(500).json(result);
   }
 }
 

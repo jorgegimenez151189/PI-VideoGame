@@ -36,8 +36,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Videogame, Genero } = sequelize.models;
 
 //Associations
-Videogame.belongsToMany(Genero, {through: 'VideogameGenero'});
-Genero.belongsToMany(Videogame, {through: 'VideogameGenero'});
+Videogame.belongsToMany(Genero, {through: 'videogameGenero'});
+Genero.belongsToMany(Videogame, {through: 'videogameGenero'});
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);

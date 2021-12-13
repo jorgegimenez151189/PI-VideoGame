@@ -27,7 +27,7 @@ conn.sync({ force: true }).then(() => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
     
     generosController.createGenres();
-    var couter = Videogame.create({
+    /* var couter = Videogame.create({
       name: "Counter Strike",
       descripcion: "Juego de tiros entre CT y Terroristas",
       fecha_lanzamiento: "2016-06-21",
@@ -45,14 +45,14 @@ conn.sync({ force: true }).then(() => {
 
     var guerra = Genero.create({
       name: "Guerra"
-    })
+    }) */
 
     //couter.addGenero(guerra)
 
-    Promise.all([couter, warzone, guerra])
+    /* Promise.all([couter, warzone, guerra])
     .then(res => {
       console.log("Juegos precargados");
-    });
+    }); */
 
   });
 });

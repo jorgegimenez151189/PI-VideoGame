@@ -16,7 +16,6 @@ const getAll = async () => {
 
 const save = async (propiedades) => {
     try {
-        console.log(propiedades.nombre)
         const result = await Videogame.create({
             name: propiedades.nombre,
             descripcion: propiedades.descripcion,
@@ -24,6 +23,7 @@ const save = async (propiedades) => {
             rating: propiedades.rating,
             plataforma: propiedades.plataforma
         });
+        return result;
     } catch (error) {
         console.error(error.message);
     }
